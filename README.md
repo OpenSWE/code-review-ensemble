@@ -35,11 +35,11 @@ Clone into your skills directory:
 
 ```bash
 # user-level (every project)
-git clone https://github.com/swe-workflow/code-review-ensemble.git \
+git clone https://github.com/OpenSWE/code-review-ensemble.git \
   ~/.claude/skills/code-review-ensemble
 
 # or project-level
-git clone https://github.com/swe-workflow/code-review-ensemble.git \
+git clone https://github.com/OpenSWE/code-review-ensemble.git \
   .claude/skills/code-review-ensemble
 ```
 
@@ -59,7 +59,7 @@ Codex doesn't have a slash-command skill system, but it reads `AGENTS.md` for co
 **Direct invocation** — feed `SKILL.md` as the prompt:
 
 ```bash
-git clone https://github.com/swe-workflow/code-review-ensemble.git
+git clone https://github.com/OpenSWE/code-review-ensemble.git
 codex exec --full-auto < code-review-ensemble/SKILL.md
 ```
 
@@ -69,7 +69,7 @@ codex exec --full-auto < code-review-ensemble/SKILL.md
 ## Code review
 
 When asked for a thorough code review, follow the procedure at
-https://github.com/swe-workflow/code-review-ensemble/blob/main/SKILL.md
+https://github.com/OpenSWE/code-review-ensemble/blob/main/SKILL.md
 ```
 
 Then prompt Codex with "code-review-ensemble on PR 1234".
@@ -81,9 +81,9 @@ Disable the `claude-agent` reviewer in `reviewers.default.json` (Codex has no in
 Create `~/.gemini/commands/code-review-ensemble.toml`:
 
 ```toml
-description = "Multi-agent code review (https://github.com/swe-workflow/code-review-ensemble)"
+description = "Multi-agent code review (https://github.com/OpenSWE/code-review-ensemble)"
 prompt = """
-Follow the procedure at https://github.com/swe-workflow/code-review-ensemble/blob/main/SKILL.md
+Follow the procedure at https://github.com/OpenSWE/code-review-ensemble/blob/main/SKILL.md
 on PR {{args}}; if no PR number is given, detect it from the current branch with `gh pr view`.
 """
 ```
@@ -95,7 +95,7 @@ Invoke `/code-review-ensemble 1234`. Disable or substitute the `claude-agent` re
 Clone the repo and add a Cursor rule referencing it:
 
 ```bash
-git clone https://github.com/swe-workflow/code-review-ensemble.git \
+git clone https://github.com/OpenSWE/code-review-ensemble.git \
   .cursor/skills/code-review-ensemble
 ```
 
